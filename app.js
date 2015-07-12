@@ -8,7 +8,9 @@ function printError(error){
 	console.log(error.message)
 }
 
-var req = http.get("http://swapi.co/api/species/"+ Math.floor((Math.random() * 10) + 1)+"/", function(res){
+userInput = process.argv[2];
+
+var req = http.get("http://swapi.co/api/"+ userInput + "/"+ Math.floor((Math.random() * 10) + 1)+"/", function(res){
 	var body = " ";
 
 	res.on('data', function (chunk){
